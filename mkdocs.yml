@@ -1,6 +1,5 @@
 site_name: Preview of Synergy Studio Developer Documentation
-site_url: "https://ExtremeEventSolutions.github.io/ees-synergystudio-apis-staging/"
-# site_url: "https://turbo-fortnight-v7e7no5.pages.github.io/"
+site_url: "https://yasasvi18.github.io/ees-yash-poc/"
 theme:
   name: material
   features:
