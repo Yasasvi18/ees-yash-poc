@@ -8,15 +8,25 @@ const currencyResult = document.getElementById("currency-result");
 
 // Fetch currency symbols and populate dropdowns
 async function populateCurrencies() {
-  const res = await fetch("https://api.exchangerate.host/symbols");
-  const data = await res.json();
-  const symbols = data.symbols;
-  for (let code in symbols) {
-    fromCurrency.innerHTML += `<option value="${code}">${code}</option>`;
-    toCurrency.innerHTML += `<option value="${code}">${code}</option>`;
+  try {
+    const res = await fetch("https://api.exchangerate.host/symbols");
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    const data = await res.json();
+    if (!data.symbols) {
+      throw new Error("No symbols found in API response");
+    }
+    const symbols = data.symbols;
+    for (let code in symbols) {
+      fromCurrency.innerHTML += `<option value="${code}">${code}</option>`;
+      toCurrency.innerHTML += `<option value="${code}">${code}</option>`;
+    }
+    fromCurrency.value = "USD";
+    toCurrency.value = "EUR";
+  } catch (error) {
+    console.error("Error populating currencies:", error);
   }
-  fromCurrency.value = "USD";
-  toCurrency.value = "EUR";
 }
 populateCurrencies();
 
