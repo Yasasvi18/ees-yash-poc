@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Currency & Weight Converter</h1>
+
+    <section class="converter">
+      <h2>💱 Currency Converter</h2>
+      <div class="input-group">
+        <input type="number" id="currency-amount" placeholder="Amount" />
+        <select id="from-currency"></select>
+        <span>to</span>
+        <select id="to-currency"></select>
+      </div>
+      <p id="currency-result"></p>
+    </section>
+
+    <section class="converter">
+      <h2>⚖️ Weight Converter</h2>
+      <div class="input-group">
+        <input type="number" id="weight-input" placeholder="Value" />
+        <select id="from-weight">
+          <option value="kg">Kilograms</option>
+          <option value="lb">Pounds</option>
+          <option value="g">Grams</option>
+          <option value="oz">Ounces</option>
+        </select>
+        <span>to</span>
+        <select id="to-weight">
+          <option value="kg">Kilograms</option>
+          <option value="lb">Pounds</option>
+          <option value="g">Grams</option>
+          <option value="oz">Ounces</option>
+        </select>
+      </div>
+      <p id="weight-result"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
